@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="consoleField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="644.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/8.0.192" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TestSettings">
+  <children>
+    <Label layoutX="171.0" layoutY="14.0" text="Настройки тестирования" textFill="WHITE">
+      <font>
+        <Font name="Arial Black" size="20.0" />
+      </font>
+    </Label>
+    <TabPane layoutX="14.0" layoutY="51.0" prefHeight="360.0" prefWidth="611.0" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="ОК">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="234.0" prefWidth="716.0">
+              <children>
+                <CheckBox fx:id="ASKM4WIRE" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="4-x проводное подключение" textFill="BLACK">
+                  <font>
+                    <Font size="14.0" fx:id="x1" />
+                  </font>
+                </CheckBox>
+                <Label font="$x1" layoutX="14.0" layoutY="33.0" prefHeight="55.0" prefWidth="211.0" text="Поправка на сопротивление соединительных проводов, Ом" wrapText="true" />
+                <TextField fx:id="R_DIFF" layoutX="14.0" layoutY="88.0" prefWidth="211.0" />
+                <Label font="$x1" layoutX="14.0" layoutY="110.0" prefHeight="55.0" prefWidth="211.0" text="Поправка на ёмкость соединительных проводов, нФ" wrapText="true" />
+                <TextField fx:id="C_DIFF" layoutX="14.0" layoutY="165.0" prefWidth="211.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Проверка">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <CheckBox fx:id="TEST_R" font="$x1" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Проверка целостности" />
+                <CheckBox fx:id="TEST_KZ" font="$x1" layoutX="14.0" layoutY="39.0" mnemonicParsing="false" text="Проверка на КЗ" />
+                <CheckBox fx:id="TEST_RIZ" font="$x1" layoutX="14.0" layoutY="65.0" mnemonicParsing="false" text="Проверка сопротивления изоляции" />
+                <CheckBox fx:id="TEST_PRIZ" font="$x1" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" text="Проверка прочности изоляции" />
+                <Label font="$x1" layoutX="289.0" layoutY="14.0" prefHeight="19.0" prefWidth="138.0" text="R нормы, Ом" wrapText="true" />
+                <TextField fx:id="tstR_N" layoutX="412.0" layoutY="14.0" prefWidth="89.0" />
+                <CheckBox fx:id="R_IZM" font="$x1" layoutX="519.0" layoutY="16.0" mnemonicParsing="false" text="Измерять" />
+                <Label font="$x1" layoutX="289.0" layoutY="39.0" prefHeight="19.0" prefWidth="138.0" text="R нормы, Ом" wrapText="true" />
+                <TextField id="tst_KZ_N" fx:id="tstKZ_N" layoutX="412.0" layoutY="39.0" prefWidth="89.0" />
+                <CheckBox fx:id="KZ_IZM" font="$x1" layoutX="519.0" layoutY="42.0" mnemonicParsing="false" text="Измерять" />
+                <Label font="$x1" layoutX="288.0" layoutY="65.0" prefHeight="19.0" prefWidth="138.0" text="R нормы, МОм" wrapText="true" />
+                <TextField fx:id="tstRIZ_N" layoutX="412.0" layoutY="65.0" prefWidth="89.0" />
+                <CheckBox fx:id="RIZ_IZM" font="$x1" layoutX="518.0" layoutY="68.0" mnemonicParsing="false" text="Измерять" />
+                <Label font="$x1" layoutX="288.0" layoutY="90.0" prefHeight="19.0" prefWidth="138.0" text="Время проверки, с" wrapText="true" />
+                <TextField fx:id="PRIZ_Time" layoutX="412.0" layoutY="91.0" prefWidth="89.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Измерения">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="291.0" prefWidth="611.0">
+              <children>
+                <TabPane layoutX="14.0" layoutY="64.0" prefHeight="223.0" prefWidth="432.0" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                    <Tab text="Омметр">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="432.0">
+                          <children>
+                            <Label font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="211.0" text="Задержка перед измерением (&lt;0 - автовыбор)" wrapText="true" />
+                            <TextField fx:id="R_Delay" layoutX="14.0" layoutY="69.0" prefWidth="168.0" />
+                            <Label layoutX="185.0" layoutY="73.0" text="с" />
+                            <Label font="$x1" layoutX="225.0" layoutY="14.0" prefHeight="55.0" prefWidth="211.0" text="Апертура                   (время интеграции)" wrapText="true" />
+                            <Label font="$x1" layoutX="14.0" layoutY="101.0" prefHeight="55.0" prefWidth="211.0" text="При автовыборе не превышать диапазон" wrapText="true" />
+                            <ChoiceBox fx:id="R_Aper" layoutX="225.0" layoutY="71.0" prefWidth="168.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="2 мс" />
+                                  <String fx:value="20 мс" />
+                                  <String fx:value="200 мс" />
+                                </FXCollections>
+                              </items>
+                            </ChoiceBox>
+                            <ChoiceBox fx:id="R_MaxRange" layoutX="14.0" layoutY="158.0" prefWidth="202.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="10 Ом" />
+                                  <String fx:value="100 Ом" />
+                                  <String fx:value="1 кОм" />
+                                  <String fx:value="10 кОм" />
+                                  <String fx:value="100 кОм" />
+                                  <String fx:value="1 МОм" />
+                                  <String fx:value="10 МОм" />
+                                  <String fx:value="100 МОм" />
+                                </FXCollections>
+                              </items>
+                            </ChoiceBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="Мегометр">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Label font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="211.0" text="Напряжение измерения, В" wrapText="true" />
+                            <TextField fx:id="RIZ_U" layoutX="14.0" layoutY="54.0" prefWidth="189.00009999999747" />
+                            <Label font="$x1" layoutX="229.0" layoutY="14.0" prefHeight="40.0" prefWidth="211.0" text="Нарастание напряжения            (0.0 - автовыбор)" wrapText="true" />
+                            <TextField id="RIZ_Delay" fx:id="RIZ_Rize" layoutX="229.0" layoutY="54.0" prefWidth="189.00009999999747" />
+                            <Label font="$x1" layoutX="14.0" layoutY="103.0" prefHeight="40.0" prefWidth="211.0" text="Задержка перед измерением (&lt;0 - автовыбор), с" wrapText="true" />
+                            <TextField fx:id="RIZ_Delay" layoutX="14.0" layoutY="143.0" prefWidth="189.00009999999747" />
+                            <Label font="$x1" layoutX="229.0" layoutY="88.0" prefHeight="55.0" prefWidth="211.0" text="Апертура                   (время интеграции)" wrapText="true" />
+                            <ChoiceBox fx:id="RIZ_Aper" layoutX="229.0" layoutY="144.0" prefWidth="189.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="2 мс" />
+                                  <String fx:value="20 мс" />
+                                  <String fx:value="200 мс" />
+                                </FXCollections>
+                              </items>
+                            </ChoiceBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="Прочность изоляции">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Label font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="211.0" text="Напряжение проверки, В" wrapText="true" />
+                            <TextField fx:id="PRIZ_U" layoutX="14.0" layoutY="54.0" prefWidth="189.00009999999747" />
+                            <RadioButton fx:id="PRIZ_DC" layoutX="227.0" layoutY="21.0" mnemonicParsing="false" selected="true" text="Постоянное">
+                              <toggleGroup>
+                                <ToggleGroup fx:id="voltage" />
+                              </toggleGroup>
+                            </RadioButton>
+                            <RadioButton fx:id="PRIZ_AC" layoutX="227.0" layoutY="45.0" mnemonicParsing="false" text="Переменное" toggleGroup="$voltage" />
+                            <Label font="$x1" layoutX="14.0" layoutY="85.0" prefHeight="29.0" prefWidth="190.0" text="Нарастание напряжения, с" wrapText="true" />
+                            <TextField fx:id="PRIZ_RIZE" layoutX="14.0" layoutY="114.0" prefWidth="190.0" />
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                    <Tab text="Емкость">
+                      <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <children>
+                            <Label font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="211.0" text="При автовыборе не превышать диапазон" wrapText="true" />
+                            <ComboBox fx:id="C_MaxRange" layoutX="14.0" layoutY="76.0" prefHeight="21.0" prefWidth="197.0">
+                              <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="1 нФ" />
+                                  <String fx:value="10 нФ" />
+                                  <String fx:value="100 нФ" />
+                                  <String fx:value="1 мкФ" />
+                                </FXCollections>
+                              </items>
+                            </ComboBox>
+                          </children>
+                        </AnchorPane>
+                      </content>
+                    </Tab>
+                  </tabs>
+                </TabPane>
+                <Label font="$x1" layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="211.0" text="Режим измерения" wrapText="true" />
+                <Label font="$x1" layoutX="215.0" layoutY="14.0" prefHeight="21.0" prefWidth="182.0" text="Измерять" wrapText="true" />
+                <ChoiceBox fx:id="Arp_MeasMode" layoutX="14.0" layoutY="36.0" prefWidth="182.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Омметр" />
+                      <String fx:value="Мегомметр" />
+                      <String fx:value="Измерение емкости" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox id="Arp_MeasMode" fx:id="Arp_Connect" layoutX="215.0" layoutY="35.0" prefWidth="182.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Точки цепи (относительно опорной точки)" />
+                      <String fx:value="Цепи относительно остальных" />
+                      <String fx:value="Между всеми цепями попарно" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <ChoiceBox id="Arp_MeasMode" fx:id="Arp_Range" layoutX="415.0" layoutY="35.0" prefWidth="182.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Автовыбор" />
+                      <String fx:value="1 нФ" />
+                      <String fx:value="10 нФ" />
+                      <String fx:value="100 нФ" />
+                      <String fx:value="10 Ом" />
+                      <String fx:value="100 Ом" />
+                      <String fx:value="1 кОм" />
+                      <String fx:value="10 кОм" />
+                      <String fx:value="100 кОм" />
+                      <String fx:value="1 МОм" />
+                      <String fx:value="10 МОм" />
+                      <String fx:value="100 МОм" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label font="$x1" layoutX="415.0" layoutY="13.0" prefHeight="21.0" prefWidth="182.0" text="Диапазон" wrapText="true" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Button fx:id="SaveDefault" layoutX="14.0" layoutY="421.0" mnemonicParsing="false" text="Сохранить как настройки по умолчанию" />
+    <Button fx:id="Use" layoutX="542.0" layoutY="421.0" mnemonicParsing="false" text="Применить" />
+    <TextArea fx:id="Logs" layoutX="14.0" layoutY="454.0" prefHeight="120.0" prefWidth="611.0" wrapText="true" />
+  </children>
+</AnchorPane>
